@@ -19,24 +19,25 @@
               oninput="setCustomValidity('')"
               required
               autocomplete="off"
-              placeholder="Nombre"/>
+              placeholder="Nombre completo"/>
           <br>
 
-          <input
-              id="last_name"
-              maxlength="80"
-              name="last_name"
-              size="20"
-              v-model="lastName"
-              oninvalid="setCustomValidity('Completa este campo')"
-              oninput="setCustomValidity('')"
-              required
-              type="text"
-              autocomplete="off"
-              placeholder="Apellido"/>
-          <br>
+          <select
+            id="00N6g00000Qpt3M"
+            name="00N6g00000Qpt3M"
+            v-model="consortiums"
+            oninvalid="setCustomValidity('Completa este campo')"
+            oninput="setCustomValidity('')"
+            required
+            autocomplete="off"
+          >
+            <option value="" disabled selected>Cantidad de consorcios</option>
+            <option value="1-5">1-5</option>
+            <option value="6-20">6-20</option>
+            <option value="+20">+20</option>
+          </select>
 
-          <input
+          <!-- <input
               id="00N6g00000Qpt3M"
               name="00N6g00000Qpt3M"
               size="20"
@@ -44,10 +45,11 @@
               oninvalid="setCustomValidity('Completa este campo')"
               oninput="setCustomValidity('')"
               type="number"
+              min="1"
               required
               autocomplete="off"
               placeholder="Cantidad de consorcios"
-          /><br>
+          /><br> -->
 
           <input
               id="email"
@@ -76,16 +78,6 @@
               required
               placeholder="Telefono"
           /><br>
-
-          <input
-            name="description"
-            v-model="motivoContacto"
-            oninvalid="setCustomValidity('Completa este campo')"
-            oninput="setCustomValidity('')"
-            autocomplete="off"
-            required
-            placeholder="Motivo de contacto"
-          /><br/>
 
           <input
             id="00N6g00000Qpt3O"
@@ -147,8 +139,17 @@
             placeholder="UTM CAMPAIGN"
           />
 
-          <button @click="submitForm">Enviar</button>
+          <input
+            id="00N6g00000RXXwK"
+            name="00N6g00000RXXwK"
+            type="checkbox"
+            value="true"
+            checked="checked"
+            style="display:none"
+          />
       </form>
+
+      <button class="bg-[#E85298]" @click="submitForm"><b>Accedé a tu demo gratis</b></button>
 
   </div>
 </template>
@@ -163,7 +164,7 @@ export default {
       motivoContacto: 'Quiero más información',
       name: '',
       lastName: '',
-      consortiums: null,
+      consortiums: '',
       email: '',
       phone: null,
       utmSource: null,
@@ -211,29 +212,34 @@ export default {
 </script>
 
 <style scoped>
-  form input:focus {
+  select {
+    background-color: white;
+  }
+
+  form input:focus, form select:focus {
       outline: none;
   }
-  form input {
+  form input, form select {
       color: black;
       padding-left: 15px;
       border: 1px solid #696871;
   }
-  form input.error {
+  form input.error, form select.error {
     border: 1px solid red;
   }
 
-  form input::after {
+  form input::after, form select::after {
     content: 'click my input';
     color: black;
   }
 
-  form input, button{
+  form input, button, select {
       width: 100%;
       height: 44px;
       border-radius: 5px;
       margin-bottom: 15px;
   }
+
   form button {
       background-color: #FC5867;
   }
