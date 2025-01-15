@@ -1,5 +1,5 @@
 <template>
-  <div class="container h-[500px] w-100 m-auto">
+  <div class="container h-[300px] w-100 m-auto">
     <div
       v-for="(testimonial, index) in testimonials"
       class="w-4/5 lg:w-1/2"
