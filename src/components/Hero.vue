@@ -25,7 +25,7 @@
              px-5
              lg:text-left
              lg:justify-between
-             xl:mr-[5%]
+             lg:mr-[5%]
              lg:ml-[50px]"
             >
             <h2
@@ -54,7 +54,7 @@
             <img
                 src="../assets/img/hero-image.png"
                 alt="app-image"
-                class="hidden lg:block object-fit lg:w-[100%] lg:max-w-[650px] min-w-[650px]">
+                class="hidden lg:block object-fit lg:w-[100%] lg:max-w-[1024px] min-w-[650px]">
         </div>
     </div>
 </template>
